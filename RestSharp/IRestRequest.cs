@@ -131,6 +131,11 @@ namespace RestSharp
         /// </summary>
         bool UseDefaultCredentials { get; set; }
 
+        /// <summary>
+        /// Determines whether data being uploaded must be buffered in memory
+        /// </summary>
+        bool AllowWriteStreamBuffering { get; set; }
+
 #if FRAMEWORK
         /// <summary>
         /// Adds a file to the Files collection to be included with a POST or PUT request 

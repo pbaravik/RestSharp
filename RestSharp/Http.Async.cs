@@ -424,6 +424,7 @@ namespace RestSharp
             HttpWebRequest webRequest = (HttpWebRequest) WebRequest.Create(url);
 
             webRequest.UseDefaultCredentials = this.UseDefaultCredentials;
+            webRequest.AllowWriteStreamBuffering = this.AllowWriteStreamBuffering;
 
 #if !WINDOWS_PHONE && !SILVERLIGHT && !WINDOWS_UWP
             

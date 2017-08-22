@@ -405,7 +405,7 @@ namespace RestSharp
             http.UseDefaultCredentials = request.UseDefaultCredentials;
             http.ResponseWriter = request.ResponseWriter;
             http.CookieContainer = this.CookieContainer;
-
+            http.AllowWriteStreamBuffering = request.AllowWriteStreamBuffering;
 
             // move RestClient.DefaultParameters into Request.Parameters
             foreach (Parameter p in this.DefaultParameters)

@@ -200,6 +200,11 @@ namespace RestSharp
         public Uri Url { get; set; }
 
         /// <summary>
+        /// Determines whether data being uploaded must be buffered in memory
+        /// </summary>
+        public bool AllowWriteStreamBuffering { get; set; }
+
+        /// <summary>
         /// Flag to send authorisation header with the HttpWebRequest
         /// </summary>
         public bool PreAuthenticate { get; set; }
@@ -236,6 +241,7 @@ namespace RestSharp
 
             this.AddSharedHeaderActions();
             this.AddSyncHeaderActions();
+            this.AllowWriteStreamBuffering = true;
         }
 
         partial void AddSyncHeaderActions();

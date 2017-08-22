@@ -90,6 +90,11 @@ namespace RestSharp
 
         Uri Url { get; set; }
 
+        /// <summary>
+        /// Determines whether data being uploaded must be buffered in memory
+        /// </summary>
+        bool AllowWriteStreamBuffering { get; set; }
+
         HttpWebRequest DeleteAsync(Action<HttpResponse> action);
 
         HttpWebRequest GetAsync(Action<HttpResponse> action);

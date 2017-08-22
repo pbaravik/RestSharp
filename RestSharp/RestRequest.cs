@@ -36,7 +36,7 @@ namespace RestSharp
     /// </summary>
     public class RestRequest : IRestRequest
     {
-        /// <summary>
+	    /// <summary>
         /// Always send a multipart/form-data request - even when no Files are present.
         /// </summary>
         public bool AlwaysMultipartFormData { get; set; }
@@ -65,6 +65,11 @@ namespace RestSharp
         public bool UseDefaultCredentials { get; set; }
 
         /// <summary>
+        /// Determines whether data being uploaded must be buffered in memory
+        /// </summary>
+        public bool AllowWriteStreamBuffering { get; set; }
+
+        /// <summary>
         /// Default constructor
         /// </summary>
         public RestRequest()
@@ -75,6 +80,7 @@ namespace RestSharp
             this.Files = new List<FileParameter>();
             this.XmlSerializer = new XmlSerializer();
             this.JsonSerializer = new JsonSerializer();
+            this.AllowWriteStreamBuffering = true;
 
             this.OnBeforeDeserialization = r => { };
         }
